@@ -1,0 +1,12 @@
+package tn.esprit.pidev.entities;
+
+public enum Objectif {
+
+    PROBLEME_DOCUMENTATION,
+    PROBLEME_AFFECTATION,
+    COMMUNICATION,
+    PROBLEME_SUPERVISION,
+    QUESTION_ADMINISTRATIF,
+    CONDITION_TRAVAIL,
+    AUTRES
+}

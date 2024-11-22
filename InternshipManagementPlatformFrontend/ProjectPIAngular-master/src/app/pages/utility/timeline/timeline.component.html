@@ -1,0 +1,103 @@
+<div class="container-fluid">
+  <app-page-title title="Timeline" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Horizontal Timeline</h4>
+
+          <div class="hori-timeline">
+            <owl-carousel-o [options]="timelineCarousel" class="events navs-carousel">
+              <ng-template carouselSlide>
+                <div class="item event-list">
+                  <div>
+                    <div class="event-date">
+                      <div class="text-primary mb-1">12 September</div>
+                      <h5 class="mb-4">First event</h5>
+                    </div>
+                  
+
+                
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="item event-list">
+                  <div>
+                    <div class="event-date">
+                      <div class="text-primary mb-1">06 October</div>
+                      <h5 class="mb-4">Second event</h5>
+                    </div>
+                  
+
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="item event-list active">
+                  <div>
+                    <div class="event-date">
+                      <div class="text-primary mb-1">06 October</div>
+                      <h5 class="mb-4">Third event</h5>
+                    </div>
+                 
+
+                  
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="item event-list">
+                  <div>
+                    <div class="event-date">
+                      <div class="text-primary mb-1">04 November</div>
+                      <h5 class="mb-4">Fourth event</h5>
+                    </div>
+                   
+
+                   
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="item event-list">
+                  <div>
+                    <div class="event-date">
+                      <div class="text-primary mb-1">19 November</div>
+                      <h5 class="mb-4">Fifth event</h5>
+                    </div>
+                 
+
+                 
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="item event-list">
+                  <div>
+                    <div class="event-date">
+                      <div class="text-primary mb-1">21 December</div>
+                      <h5 class="mb-4">Sixth event</h5>
+                    </div>
+                   
+
+                   
+                  </div>
+                </div>
+              </ng-template>
+            </owl-carousel-o>
+          </div>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+  </div>
+  <!-- end row -->
+
+ 
+
+</div>
+
+
+

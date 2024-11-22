@@ -1,0 +1,150 @@
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <app-page-title title="Add Student" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+    <!-- end page title -->
+  
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title-desc">When you add a Student , he will be able to use 
+              the services offred by this plateform
+            </p>
+
+            <form (ngSubmit)="validSubmit()" [formGroup]="StudentForm">
+              <div class="row">
+                <div class="text-center mb-4">
+                  <div class="position-relative d-inline-block">
+                    <div class="position-absolute bottom-0 end-0">
+                      <label for="member-image-input" class="mb-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Select Member Image">
+                        <div class="avatar-xs">
+                          <div class="avatar-title bg-light border rounded-circle text-muted cursor-pointer">
+                            <i class="bx bxs-image-alt"></i>
+                          </div>
+                        </div>
+                      </label>
+                      <input class="form-control d-none" value="" id="member-image-input" type="file" accept="image/png, image/gif, image/jpeg" (change)="fileChange($event)">
+                    </div>
+                    <div class="avatar-lg">
+                      <div class="avatar-title bg-light rounded-circle">
+                        <img src="http://res.cloudinary.com/dmcashown/image/upload/v1709758217/znnmhbjdh9ovweqssalb.jpg" id="member-img" class="avatar-md rounded-circle h-auto" />
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                 <div class="mb-3">
+                     <label for="firstName">First name</label>
+                        <input type="text" class="form-control" id="email" formControlName="firstName" 
+                        [ngClass]="{ 'is-invalid': submit && form.firstName.errors}" placeholder="Enter first name">
+                        <div *ngIf="submit && form.firstName.errors" class="invalid-feedback">
+                          <div *ngIf="form.firstName.errors.required">First Name requis</div>
+                          <div *ngIf="form.firstName.errors.pattern">First Name must be with letters only</div>
+                      </div>
+                       </div>                 
+                 </div>
+                 <div class="col-md-4">
+                <div class="mb-3">
+                  <label for="lastName">Last name</label>
+                     <input type="text" class="form-control" id="email" formControlName="lastName" 
+                     [ngClass]="{ 'is-invalid': submit && form.lastName.errors}" placeholder="Enter last name">
+                     <div *ngIf="submit && form.lastName.errors" class="invalid-feedback">
+                      <div *ngIf="form.lastName.errors.required">Last Name requis</div>
+                      <div *ngIf="form.lastName.errors.pattern">Last Name must be with letters only</div>
+                  </div>               
+                </div>
+                </div>
+                <div class="col-md-4">
+                <div class="mb-3">
+                  <label for="unId">University ID</label>
+                     <input type="text" class="form-control" id="email" formControlName="unId" 
+                     [ngClass]="{ 'is-invalid': submit && form.unId.errors}" placeholder="Enter university ID">
+                     <div *ngIf="submit && form.unId.errors" class="invalid-feedback">
+                      <div *ngIf="form.unId.errors.required">University ID requis</div>
+                      <div *ngIf="form.unId.errors.maxlength || form.unId.errors.minlength">University ID  must be between 8 and 12 letters or numbers </div>
+                  </div>            
+                </div>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <label for="phoneNumber">Phone Number</label>
+                       <input type="text" class="form-control" id="email" formControlName="phoneNumber" 
+                       [ngClass]="{ 'is-invalid': submit && form.phoneNumber.errors}" placeholder="Enter phone number">
+                       <div *ngIf="submit && form.phoneNumber.errors" class="invalid-feedback">
+                        <div *ngIf="form.phoneNumber.errors.required">Phone Number requis</div>
+                        <div *ngIf="form.phoneNumber.errors.pattern">Phone Number must be with Numbers only</div>
+                        <div *ngIf="form.phoneNumber.errors.maxlength || form.phoneNumber.errors.minlength">Phone Number must be with 8 Numbers</div>
+                    </div>             
+                  </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="mb-3">
+                      <label for="cin">Card ID</label>
+                         <input type="text" class="form-control" id="email" formControlName="cin" 
+                         [ngClass]="{ 'is-invalid': submit && form.cin.errors}" placeholder="Enter card ID">
+                         <div *ngIf="submit && form.cin.errors" class="invalid-feedback">
+                          <div *ngIf="form.cin.errors.pattern">Card ID must be with Numbers only</div>
+                          <div *ngIf="form.cin.errors.required">Card ID requis</div>
+                          <div *ngIf="form.cin.errors.maxlength || form.cin.errors.minlength">Card ID must be with 8 Numbers</div>
+                      </div>             
+                    </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="mb-3">
+                        <label for="login">Login</label>
+                           <input type="email" class="form-control" id="email" formControlName="login" 
+                           [ngClass]="{ 'is-invalid': submit && form.login.errors}" placeholder="Enter login">
+                           <div *ngIf="submit && form.login.errors" class="invalid-feedback">
+                            <div *ngIf="form.login.errors.required">Login requis</div>
+                        </div>                
+                      </div>
+                      </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <label for="address">Address</label>
+                       <input type="text" class="form-control" id="email" formControlName="address" 
+                       [ngClass]="{ 'is-invalid': submit && form.address.errors}" placeholder="Enter address">
+                       <div *ngIf="submit && form.address.errors" class="invalid-feedback">
+                        <div *ngIf="form.address.errors.required">Address requis</div>
+                        <div *ngIf="form.address.errors.pattern">Address must be with letters only</div>
+                    </div>         
+                  </div>
+                  </div>
+                  
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <label for="level">Level</label>
+                        <select class="form-select" formControlName="level"  [ngClass]="{ 'is-invalid': submit && form.level.errors}">
+                            <option> {{'PREMIERE' | lowercase}}  </option>
+                            <option>{{ 'DEUXIEME' | lowercase }}</option>
+                            <option>  {{'TROISIEME'| lowercase }} </option>
+                            <option>{{'QUATRIEME' | lowercase }}</option>
+                        </select>
+                        <div *ngIf="submit && form.level.errors" class="invalid-feedback">
+                          <div *ngIf="form.level.errors.required">Level requis</div>
+                      </div>  
+                </div>
+                </div>
+              </div>
+            <div>
+              <button class="btn btn-danger" type="submit">Submit form</button>
+            </div>
+            </form>
+          </div>
+        </div>
+        <!-- end card -->
+      </div> <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+  
